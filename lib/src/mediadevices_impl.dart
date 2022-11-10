@@ -65,6 +65,11 @@ class MediaDevicesWeb extends MediaDevices {
   }
 
   @override
+  Future<MediaDeviceInfo> getCurrentInputDevice() {
+    return Future.value(MediaDeviceInfo(label: "Test", deviceId: "null"));
+  }
+
+  @override
   Future<List<MediaDeviceInfo>> enumerateDevices() async {
     final devices = await getSources();
 
